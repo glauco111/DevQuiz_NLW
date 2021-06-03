@@ -6,7 +6,7 @@ class ChartWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(left: 15),
+      //padding: EdgeInsets.only(left: 15),
       height: 70,
       width: 70,
       child: Stack(
