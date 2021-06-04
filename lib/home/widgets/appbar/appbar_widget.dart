@@ -1,11 +1,13 @@
 import 'package:DevQuiz/core/core.dart';
 import 'package:DevQuiz/home/widgets/score_card/score_card_widget.dart';
+import 'package:DevQuiz/shared/models/user_model.dart';
 import 'package:flutter/material.dart';
 
 class AppBarWidget extends PreferredSize {
-  AppBarWidget()
+  final UserModel user;
+  AppBarWidget({required this.user})
       : super(
-            preferredSize: Size.fromHeight(200),
+            preferredSize: Size.fromHeight(230),
             child: Container(
               height: 250,
               child: Stack(
@@ -24,7 +26,7 @@ class AppBarWidget extends PreferredSize {
                               style: AppTextStyles.title,
                               children: [
                                 TextSpan(
-                                  text: 'Glauco',
+                                  text: user.name,
                                   style: AppTextStyles.titleBold,
                                 )
                               ]),
@@ -35,9 +37,7 @@ class AppBarWidget extends PreferredSize {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             image: DecorationImage(
-                              image: NetworkImage(
-                                'https://scontent.fpoo2-1.fna.fbcdn.net/v/t1.6435-9/58600086_2188791984541189_4677879156745175040_n.jpg?_nc_cat=102&ccb=1-3&_nc_sid=09cbfe&_nc_eui2=AeFxtISFL1NmANkWjF6L6-46fuXoLayFejd-5egtrIV6Nx2tFtkQ-elTFJvXtaytvbej20a7YwcIlEnQGA6kAcId&_nc_ohc=ucK4ez1pjfsAX90haOS&tn=f9gPHuDjcE_rIkYN&_nc_ht=scontent.fpoo2-1.fna&oh=fa9c867081bf22d3208830dd6b147a1c&oe=60DC1FC3',
-                              ),
+                              image: NetworkImage(user.photoUrl),
                             ),
                           ),
                         )
