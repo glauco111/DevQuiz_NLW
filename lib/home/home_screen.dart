@@ -1,3 +1,4 @@
+import 'package:DevQuiz/challenge/challenge_screen.dart';
 import 'package:DevQuiz/core/app_colors.dart';
 import 'package:DevQuiz/home/widgets/appbar/appbar_widget.dart';
 import 'package:DevQuiz/home/widgets/levelbutton/level_button_widget.dart';
@@ -67,6 +68,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   crossAxisCount: 2,
                   children: controller.quizzes!
                       .map((e) => QuizCardWidget(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (coontext) => ChallengeScreen(
+                                            questions: e.questions,
+                                          )));
+                            },
                             percent: e.questionAwnsered / e.questions.length,
                             title: e.title,
                             completed:
