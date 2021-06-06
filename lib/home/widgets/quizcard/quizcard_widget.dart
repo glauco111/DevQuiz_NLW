@@ -37,14 +37,14 @@ class QuizCardWidget extends StatelessWidget {
                 child: Image.asset(AppImages.blocks),
               ),
               SizedBox(
-                height: 20,
+                height: 10,
               ),
               Text(
                 title,
                 style: AppTextStyles.heading15,
               ),
               SizedBox(
-                height: 20,
+                height: 15,
               ),
               Row(
                 children: [

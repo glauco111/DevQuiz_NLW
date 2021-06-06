@@ -73,6 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   context,
                                   MaterialPageRoute(
                                       builder: (coontext) => ChallengeScreen(
+                                            title: e.title,
                                             questions: e.questions,
                                           )));
                             },
